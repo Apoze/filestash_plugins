@@ -5,7 +5,7 @@ Selfmade runtime plugins for filestash made for fun (or suffering?).
 I used AI agents to help me doing it (vibecoding).  
 
 ## Images and Icons credits  
-Nearly all images and icons have been donwloaded from iconpacks.net (free of use)  
+Nearly all icons have been donwloaded from iconpacks.net (free of use)  
 Icon by <a href='https://www.iconpacks.net/?utm_source=link-attribution&utm_content=13308'>Iconpacks</a>  
   
 ## License  
