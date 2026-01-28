@@ -12,7 +12,7 @@
   
 # Description
 Selfmade runtime plugins for filestash made for fun (or suffering?).  
-I'm not affiliated in any way to the creator of filestash, this is purely a homelab like project.  
+I'm not affiliated in any way to the creator of filestash or the official project, this is purely a homelab/fun like project.  
 
 # What is filestash
 Filestash is a web interface to access your different filesystems created by  mickael-kerjean (https://github.com/mickael-kerjean).  
