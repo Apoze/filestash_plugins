@@ -33,7 +33,7 @@ Icon by <a href='https://www.iconpacks.net/?utm_source=link-attribution&utm_cont
 ## Why did I made them
 I wanted a different look for my filestash and I wanted to be able to browse my archive files.  
 I love wasting my time.  
-For the theme, I wasn't aiming for anything in particular, I changed many times and I'm sure you will recognise what it ended up looking like.  
+For the theme, I wasn't aiming for anything in particular, I changed many times but I'm sure you will recognise what it ended up looking like.  
 
 ## Customization
 You can change every icons of the plugins and put what you want.  
@@ -44,7 +44,7 @@ The icons are all svg images.
 ### theme.zip
 -A different visual theme for filestash  
 -Icons for multiple file extensions  
--Branding (you can change it like anything else)  
+-Branding (you can change it, like anything else)  
 -Compatible big & small screens    
 -Compatible touch screen (touch and hold to select)  
 
