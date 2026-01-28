@@ -3,6 +3,8 @@
 - [What is filestash](#what-is-filestash)
 - [AI Disclosure](#ai-disclosure)
 - [Icons credits](#icons-credits)
+- [Why did I made them](#why-did-i-made-them)
+- [Customization](#customization)
 - [List of plugins](#list-of-plugins)
 - [Docker image compatibility](#docker-image-compatibility)
 - [How to install](#how-to-install)
