@@ -33,6 +33,11 @@ I wanted a different look for my filestash and I wanted to be able to browse my 
 I love wasting my time.  
 For the theme, I wasn't aiming for anything in particular, I changed many times and I'm sure you will recognise what it ended up looking like.  
 
+## Customization
+You can change every icons of the plugins and put what you want.  
+You can go in theme.patch/archive_viewer.js and change the icons with this format "data:/".  
+The icons are all svg images.  
+
 ## List of plugins
 ### theme.zip
 -A different visual theme for filestash  
