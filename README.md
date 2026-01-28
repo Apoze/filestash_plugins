@@ -1,5 +1,6 @@
 ## Table of Contents
 - [Description](#description)
+- [What is filestash](#what-is-filestash)
 - [AI Disclosure](#ai-disclosure)
 - [Icons credits](#icons-credits)
 - [List of plugins](#list-of-plugins)
@@ -11,6 +12,14 @@
   
 # Description
 Selfmade runtime plugins for filestash made for fun (or suffering?).  
+I'm not affiliated in any way to the creator of filestash, this is purely a homelab like project.  
+
+# What is filestash
+Filestash is a web interface to access your different filesystems created by  mickael-kerjean (https://github.com/mickael-kerjean).  
+You can check the official github here:  
+https://github.com/mickael-kerjean/filestash  
+You can also check the official website:  
+https://www.filestash.app/  
 
 ## AI Disclosure
 I used AI agents to help me doing it (vibecoding).  
@@ -22,7 +31,7 @@ Icon by <a href='https://www.iconpacks.net/?utm_source=link-attribution&utm_cont
 ## Why did I made them ?
 I wanted a different look for my filestash and I wanted to be able to browse my archive files.  
 I love wasting my time.  
-For the theme, I wasn't aiming for anything in particular, I changed many times and I'm sure you will recognise what it ended up looking like.
+For the theme, I wasn't aiming for anything in particular, I changed many times and I'm sure you will recognise what it ended up looking like.  
 
 ## List of plugins
 ### theme.zip
@@ -35,7 +44,7 @@ For the theme, I wasn't aiming for anything in particular, I changed many times 
 ### archive_viewer.zip
 -Browse archive files  
 -View non binary files  
--Extract & download one or multiple files
+-Extract & download one or multiple files  
 -Compatible big & small screens  
 
 ## Docker image compatibility
@@ -43,10 +52,9 @@ Compatible with the latest docker image available as I write this (January 28, 2
 https://hub.docker.com/r/machines/filestash/tags  
 Digest: sha256:fb9c8a6f9674756a83a4f00266f41f43379e3224f58d4050b1e803ffa6956842  
 tag: 6a80725b2116  
-filestash github: https://github.com/mickael-kerjean/filestash  
 
 ## How to install
-Put the .zip of a plugin in the "plugins" folder of your filestash container. "filestash:/app/data/state/plugins/" (assuming filestash is the name of your volume).
+Put the .zip of a plugin in the "plugins" folder of your filestash container. "filestash:/app/data/state/plugins/" (assuming filestash is the name of your volume).  
 
 How to do that:
 Check the name of your volume, either in your docker-compose.yml or:
