@@ -1,21 +1,42 @@
 # filestash_plugins  
 Selfmade runtime plugins for filestash made for fun (or suffering?).  
 
+## License  
+
+This project is licensed under the MIT License — see the LICENSE file for details.  
+
 ## AI Disclosure  
 I used AI agents to help me doing it (vibecoding).  
 
 ## Images and Icons credits  
 Nearly all icons have been donwloaded from iconpacks.net (free of use)  
 Icon by <a href='https://www.iconpacks.net/?utm_source=link-attribution&utm_content=13308'>Iconpacks</a>  
-  
-## License  
 
-This project is licensed under the MIT License — see the LICENSE file for details.  
-
-## Why did I made it ?
-I wanted a different look for my filestash.  
+## Why did I made them ?
+I wanted a different look for my filestash and I wanted to be able to browse my archive files.  
 I love wasting my time.  
-I wasn't aiming for anything in particular, I changed many times and I'm sure you will recognise what it ended up looking like.
+For the theme, I wasn't aiming for anything in particular, I changed many times and I'm sure you will recognise what it ended up looking like.
+
+## List of plugins
+### theme.zip
+-A different visual theme for filestash  
+-Icons for multiple file extensions  
+-Branding (you can change it like anything else)  
+-Compatible big & small screens    
+-Compatible touch screen (touch and hold to select)  
+
+### archive_viewer.zip
+-Browse archive files  
+-View non binary files  
+-Extract & download one or multiple files
+-Compatible big & small screens  
+
+## Docker image compatibility
+Compatible with the latest docker image available as I write this (January 28, 2026).  
+https://hub.docker.com/r/machines/filestash/tags  
+Digest: sha256:fb9c8a6f9674756a83a4f00266f41f43379e3224f58d4050b1e803ffa6956842  
+tag: 6a80725b2116  
+filestash github: https://github.com/mickael-kerjean/filestash  
 
 ## How to use:
 Put the .zip of a plugin in the "plugins" folder of your filestash container. "filestash:/app/data/state/plugins/" (assuming filestash is the name of your volume).
@@ -44,7 +65,7 @@ docker restart filestash && docker compose ps -a
 **Clear your cache to see the changes (cloudflare/browser)**  
 
 ## Showcase theme plugin  
-**Computer browser**  
+### Computer browser
 Computer light mode list :  
 ![Computer light mode list](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_light1.png?raw=true)  
   
@@ -57,7 +78,7 @@ Computer dark mode list :
 Computer dark mode grid :  
 ![Computer dark mode grid](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_dark2.png?raw=true)  
   
-**Mobile browser**  
+### Mobile browser
 Mobile light mode list :  
 ![Mobile light mode list](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_light_mobile1.png?raw=true)  
   
