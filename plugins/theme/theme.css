@@ -1,0 +1,406 @@
+:root {
+    --primary: #1a73e8 !important;
+    --emphasis-primary: var(--primary) !important;
+
+    --bg-color: #ffffff !important;
+    --color: #202124 !important;
+    --light: #5f6368 !important;
+    --emphasis: var(--light) !important;
+
+    --surface: #f8f9fa !important;
+}
+
+/* Connect page */
+#app .component_page_connect {
+    background: var(--surface);
+}
+
+/* Global spacing */
+body:not(.dark-mode) #app [is="component_filesystem"] .component_filesystem {
+    padding-top: 24px;
+}
+
+body:not(.dark-mode) #app #main {
+    border: none;
+    border-top-left-radius: 0;
+}
+
+/* List view separators */
+body:not(.dark-mode) #app .list > .component_thing.view-list {
+    border-top: 1px solid #dadce0;
+    margin-bottom: -3px;
+    border-radius: 0;
+}
+
+/* Breadcrumb */
+body:not(.dark-mode) #app component-breadcrumb .component_separator img {
+    display: none;
+}
+body:not(.dark-mode) #app component-breadcrumb .component_separator:after {
+    content: "›";
+    color: var(--light);
+    opacity: 0.8;
+    padding: 0 6px;
+}
+body:not(.dark-mode) #app .component_breadcrumb .component_path-element .component_path-element-wrapper {
+    font-size: 1rem;
+}
+body:not(.dark-mode) #app .component_breadcrumb .component_logout img {
+    filter: brightness(0.6);
+}
+
+/* Sidebar */
+body:not(.dark-mode) #app [data-bind="sidebar"] {
+    background: #ffffff;
+    color: var(--light);
+    border-right: 1px solid #dadce0;
+}
+
+body:not(.dark-mode) #app [data-bind="sidebar"] h3 {
+    margin-bottom: 18px;
+}
+
+body:not(.dark-mode) #app [data-bind="sidebar"] h3 input {
+    font-size: 1rem;
+    background: #f1f3f4;
+    border-radius: 10px;
+}
+
+body:not(.dark-mode) #app [data-bind="sidebar"] h3 input::placeholder {
+    color: #80868b;
+}
+
+/* Active item (Drive-like pill) */
+body:not(.dark-mode) #app [data-bind="sidebar"] a[aria-selected="true"] {
+    background: #e8f0fe !important;
+    border-radius: 18px;
+    color: #1a73e8;
+    font-weight: 600;
+}
+
+/* Sidebar icons slightly larger */
+#app .component_filemanager_shell .component_sidebar .component_icon {
+    width: 22px !important;
+    height: 19px !important;
+    opacity: 0.9 !important;
+    padding-top: 1px !important;
+}
+
+/* Menubar */
+body:not(.dark-mode) #app component-menubar {
+    background: #ffffff;
+    color: rgba(0, 0, 0, 0.78);
+    border-bottom: 1px solid #dadce0;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.15);
+}
+body:not(.dark-mode) #app component-menubar img.component_icon {
+    filter: brightness(0.35);
+}
+
+/* Submenu (New / Upload / Search bar) light-mode */
+body:not(.dark-mode) #app [is="component_submenu"] {
+    background: #ffffff;
+    border-bottom: 1px solid transparent;
+    margin-top: 0;
+    padding-top: 10px;
+}
+body:not(.dark-mode) #app .scrolling [is="component_submenu"] {
+    border-bottom: 1px solid #dadce0;
+    padding-bottom: 10px;
+}
+
+/* Submenu (New / Upload / Search bar) */
+.dark-mode #app [is="component_submenu"] {
+    background: #1e1f22;
+    border-bottom: 1px solid transparent;
+    margin-top: 0;
+    padding-top: 10px !important;
+}
+
+.dark-mode #app .scrolling [is="component_submenu"] {
+    border-bottom: 1px solid rgba(43, 45, 48, 0.99);
+    padding-bottom: 10px !important;
+}
+
+/* Left action buttons light mode*/
+body:not(.dark-mode) #app [is="component_submenu"] .component_submenu .action button {
+    margin-right: 8px;
+    font-weight: 600;
+    text-transform: inherit;
+    font-size: 0.9rem;
+    border-radius: 18px;
+    background: #f1f3f4;
+    color: var(--color);
+    padding-left: 14px;
+    padding-right: 14px;
+    background: linear-gradient(128.84deg, #39a0fa 20% 20%, #5966fde6 72.3%);
+}
+
+/* Left action buttons dark mode */
+.dark-mode [is="component_submenu"] .component_submenu .action button {
+    margin-right: 8px;
+    font-weight: 600;
+    text-transform: inherit;
+    font-size: 0.9rem;
+    border-radius: 18px;
+    background: #cfcfd0;
+    color: var(--color);
+    padding-left: 14px;
+    padding-right: 14px;
+    background: linear-gradient(128.84deg, #0f6cbd 20.46%, #3c45ab 72.3%);
+}
+
+/* Right action cluster (search / view toggles) */
+body:not(.dark-mode) #app [is="component_submenu"] .component_submenu .action.right {
+    border-radius: 18px;
+}
+body:not(.dark-mode) #app [is="component_submenu"] .component_submenu .action button img {
+    filter: brightness(0.5);
+}
+
+/* Upload (mobile) light mode*/
+body:not(.dark-mode) #app .component_mobilefileupload input[type="file"] + label {
+    background: linear-gradient(128.84deg, #39a0fa 20.46%, #5966fde6 72.3%);
+    border-radius: 18px;
+}
+body:not(.dark-mode) #app .component_mobilefileupload input[type="file"] + label .component_icon {
+    filter: brightness(3);
+}
+
+#app [is="component_submenu"] .component_submenu .action.right {
+    background: unset !important;
+}
+
+#app [is="component_submenu"] .component_submenu .action.left{
+  background: unset !important;
+}
+
+/* Upload (mobile) dark mode */
+.dark-mode #app .component_mobilefileupload input[type="file"] + label {
+    background: linear-gradient(128.84deg, #0f6cbd 20.46%, #3c45ab 72.3%);
+    border-radius: 18px;
+}
+
+/* Image viewer shadow */
+body:not(.dark-mode) #app .component_imageviewer img.photo {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 4px 10px 0px;
+}
+
+/* Download button */
+body:not(.dark-mode) #app .component_filedownloader .download_button {
+    background: var(--primary);
+}
+
+/* Override grid extension label positioning (keep native behavior, only adjust placement) */
+.list > .component_thing.view-grid .info_extension {
+    top: 1% !important;
+    text-align: center !important;
+    left: 54px !important;
+    right: calc(50% - 50px) !important;
+    margin: 0 !important;
+}
+
+/* Override sidebar open button positioning (keep native behavior, only adjust placement) */
+.component_breadcrumb .breadcrumb [alt="sidebar-open"] {
+    height: 16px !important;
+    width: 16px !important;
+    margin-top: 13px !important;
+}
+
+/* Branding block at the very top of the sidebar (above 'Your Files') */
+.component_sidebar .vault_branding{
+    padding: 6px 6px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.component_sidebar .vault_branding_logo{
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ===== List view: rail fixe à gauche (checkbox + icône) ===== */
+#app .list > .component_thing.view-list{
+  /* réglages “colonne” */
+  --fs-rail-pad: 10px;     /* padding gauche interne de la ligne */
+  --fs-chk-w: 26px;        /* largeur réservée checkbox */
+  --fs-gap: 6px;           /* espace entre checkbox et icône */
+  --fs-ico-w: 32px;        /* largeur icône */
+  --fs-ico-h: 32px;        /* hauteur icône */
+
+  /* on réserve une vraie colonne à gauche */
+  padding-left: calc(var(--fs-rail-pad) + var(--fs-chk-w) + var(--fs-gap) + var(--fs-ico-w) + 8px);
+}
+
+/* Checkbox: toujours visible, centrée verticalement dans le rail */
+#app .list > .component_thing.view-list .component_checkbox{
+  opacity: 1 !important;                 /* override du opacity:0 + logique touch/no-touch */
+  display: block !important;             /* au cas où une règle la masquerait */
+  left: var(--fs-rail-pad) !important;   /* override left:8px Filestash */
+  top: 50% !important;                   /* override top:8px Filestash */
+  transform: translateY(-50%) !important;
+  background: transparent;               /* optionnel */
+}
+
+/* Icône: positionnée dans le rail, à droite de la checkbox */
+#app .list > .component_thing.view-list > img.component_icon{
+  position: absolute;
+  left: calc(var(--fs-rail-pad) + var(--fs-chk-w) + var(--fs-gap));
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--fs-ico-w);
+  height: var(--fs-ico-h);
+  object-fit: contain;
+}
+
+/* Filestash cache l’icône quand la checkbox est visible -> on annule */
+#app .list > .component_thing.view-list:hover .component_checkbox ~ .component_icon,
+#app .list > .component_thing.view-list.selected .component_checkbox ~ .component_icon{
+  visibility: visible !important;
+}
+
+/* Small screens: keep date visible on the right, truncate filename */
+@media (max-width: 900px) {
+  /* 2-col grid: [filename ...] [date] */
+  #app .list > .component_thing.view-list {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) max-content;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  /* Make the “filename chain” shrinkable */
+  #app .list > .component_thing.view-list .component_filename {
+    min-width: 0 !important;
+    overflow: hidden;
+  }
+  #app .list > .component_thing.view-list .component_filename .file-details {
+    min-width: 0 !important;
+  }
+
+  /* Override Filestash fixed width calc(100% - 130px) + max-width:750 */
+  #app .list > .component_thing.view-list .component_filename .file-details > span {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Date: never shrink, never disappear */
+  #app .list > .component_thing.view-list .component_datetime {
+    justify-self: end;
+    white-space: nowrap !important;
+    float: none !important;          /* cancel Filestash float:right */
+    margin: 0 !important;            /* cancel negative margins */
+    padding: 0 !important;
+  }
+
+  /* Filestash hides the date on hover → cancel that on small screens */
+  #app .component_thing:not(.loading):hover .component_datetime {
+    display: inline-block !important;
+  }
+
+  #app .component_thing {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* On small screens, keep date priority (don’t swap it for actions) */
+  #app .component_thing:hover .component_action,
+  #app .component_thing:focus-visible .component_action {
+    display: none !important;
+  }
+
+  .touch-yes .list > .component_thing.view-list{
+    padding: 0px;
+  }
+}
+
+/* Submenu: New file / New folder => "+" + icône data: */
+#app [is="component_submenu"] .fs-create-btn{
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===== Submenu: Selection mode action buttons as icons ===== */
+#app [is="component_submenu"] .component_submenu .action.left button {
+  /* en mode sélection tu voudras souvent des boutons plus “carrés” */
+  min-width: unset !important; /* override ctrl_submenu.css min-width:50px :contentReference[oaicite:3]{index=3} */
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+#app [is="component_submenu"] .fs-sel-icon{
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;  /* important car ctrl_submenu.css met -3px sur les img :contentReference[oaicite:4]{index=4} */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Texte accessible mais invisible */
+#app [is="component_submenu"] .sr-only{
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* IMPORTANT: override des marges -3px de ctrl_submenu.css sur les img de boutons */
+#app [is="component_submenu"] .fs-create-btn .fs-create-icon{
+  width: 21px !important;
+  height: 15px !important;
+  margin: 0 !important;
+}
+
+body:not(.dark-mode) #app [is="component_submenu"] .fs-create-btn .fs-create-icon{
+  filter: brightness(0.85) !important;
+}
+
+.dark-mode #app [is="component_submenu"] .fs-create-btn .fs-create-icon{
+  filter: brightness(0.5) !important;
+}
+
+.touch-yes #app [is="component_submenu"] .fs-create-btn .fs-create-icon{
+  width: 18px !important;
+  height: 16px !important;
+}
+
+.touch-yes [is="component_filesystem"] .component_filesystem{
+  padding-top: 20px !important;
+}
+
+.touch-yes [is="component_submenu"] .component_submenu .action.left{
+  background: unset !important;
+}
+
+#app [is="component_submenu"] .fs-create-btn .fs-create-plus{
+  font-weight: 800;
+  line-height: 1;
+  display: none !important;
+}
+
+#app [is="component_submenu"] .fs-create-btn .fs-create-label{
+  white-space: nowrap;
+}
+
+/* Optionnel: sur très petit écran, ne garder que “+ + icône” */
+@media (max-width: 525px){
+  #app [is="component_submenu"] .fs-create-btn .fs-create-label{
+    display: none !important;
+  }
+  #app [is="component_submenu"] .fs-create-btn .fs-create-plus{
+    display: inline-block !important;
+  }
+}

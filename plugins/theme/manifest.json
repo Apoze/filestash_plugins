@@ -1,0 +1,14 @@
+{
+    "author": "Inventory",
+    "version": "v0.0",
+    "modules": [
+        {
+            "type": "css",
+            "entrypoint": "theme.css"
+        },
+        {
+            "type": "patch",
+            "entrypoint": "theme.patch"
+        }
+    ]
+}
