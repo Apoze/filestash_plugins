@@ -1,14 +1,21 @@
-# filestash_plugins  
+## Table of Contents
+- [Description](#filestash_plugins)
+- [AI Disclosure](#ai_disclosure)
+- [Icons credits](#icons-credits)
+- [List of plugins](#list-of-plugins)
+- [Docker image compatibility](#docker-image-compatibility)
+- [How to install](#how-to-install)
+- [Showcase theme plugin](#showcase-theme-plugin)
+- [Showcase archive_viewer plugin](#showcase-archive_viewer-plugin)
+- [License](#license)
+  
+# Description
 Selfmade runtime plugins for filestash made for fun (or suffering?).  
 
-## License  
-
-This project is licensed under the MIT License — see the LICENSE file for details.  
-
-## AI Disclosure  
+## AI Disclosure
 I used AI agents to help me doing it (vibecoding).  
 
-## Images and Icons credits  
+## Icons credits
 Nearly all icons have been donwloaded from iconpacks.net (free of use)  
 Icon by <a href='https://www.iconpacks.net/?utm_source=link-attribution&utm_content=13308'>Iconpacks</a>  
 
@@ -38,7 +45,7 @@ Digest: sha256:fb9c8a6f9674756a83a4f00266f41f43379e3224f58d4050b1e803ffa6956842
 tag: 6a80725b2116  
 filestash github: https://github.com/mickael-kerjean/filestash  
 
-## How to use:
+## How to install
 Put the .zip of a plugin in the "plugins" folder of your filestash container. "filestash:/app/data/state/plugins/" (assuming filestash is the name of your volume).
 
 How to do that:
@@ -64,7 +71,7 @@ docker restart filestash && docker compose ps -a
 
 **Clear your cache to see the changes (cloudflare/browser)**  
 
-## Showcase theme plugin  
+## Showcase theme plugin
 ### Computer browser
 Computer light mode list :  
 ![Computer light mode list](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_light1.png?raw=true)  
@@ -91,8 +98,8 @@ Mobile dark mode list :
 Mobile dark mode grid :  
 ![Mobile dark mode grid](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_dark_mobile2.png?raw=true)  
   
-## Showcase archive_viewer plugin  
-**Computer browser**  
+## Showcase archive_viewer plugin
+### Computer browser archive_viewer
   
 Computer light mode :  
 ![Computer light mode](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/archive_viewer_filestash_plugin_light.png?raw=true)  
@@ -100,10 +107,15 @@ Computer light mode :
 Computer dark mode :  
 ![Computer dark mode](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/archive_viewer_filestash_plugin_dark.png?raw=true)  
   
-**Mobile browser**  
+### Mobile browser archive_viewer
   
 Mobile light mode :  
 ![Mobile light mode](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/archive_viewer_filestash_plugin_light_mobile.png?raw=true)  
   
 Mobile dark mode :  
 ![Mobile dark mode grid](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/archive_viewer_filestash_plugin_dark_mobile.png?raw=true)  
+
+  
+## License
+
+This project is licensed under the MIT License — see the LICENSE file for details.  
