@@ -1,12 +1,16 @@
-# filestash_plugins
-Selfmade runtime plugins for filestash made for fun (or suffering?).
+# filestash_plugins  
+Selfmade runtime plugins for filestash made for fun (or suffering?).  
 
-## AI Disclosure
-I used AI agents to help me doing it (vibecoding).
+## AI Disclosure  
+I used AI agents to help me doing it (vibecoding).  
 
-## Images and Icons credits
+## Images and Icons credits  
 Nearly all images and icons have been donwloaded from iconpacks.net (free of use)  
-Icon by <a href='https://www.iconpacks.net/?utm_source=link-attribution&utm_content=13308'>Iconpacks</a>
+Icon by <a href='https://www.iconpacks.net/?utm_source=link-attribution&utm_content=13308'>Iconpacks</a>  
+  
+## License  
+
+This project is licensed under the MIT License — see the LICENSE file for details.  
 
 ## Why did I made it ?
 I wanted a different look for my filestash.  
@@ -37,12 +41,48 @@ Restart your filestash container:
 docker restart filestash && docker compose ps -a
 ```
 
-## Showcase
+**Clear your cache to see the changes (cloudflare/browser)**  
 
-
-
-**Clear your cache to see the changes (cloudflare/browser)**
-
-## License
-
-This project is licensed under the MIT License — see the LICENSE file for details.
+## Showcase theme plugin  
+**Computer browser**  
+Computer light mode list :  
+![Computer light mode list](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_light1.png?raw=true)  
+  
+Computer light mode grid :  
+![Computer light mode grid](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_light2.png?raw=true)  
+  
+Computer dark mode list :  
+![Computer dark mode list](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_dark1.png?raw=true)  
+  
+Computer dark mode grid :  
+![Computer dark mode grid](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_dark2.png?raw=true)  
+  
+**Mobile browser**  
+Mobile light mode list :  
+![Mobile light mode list](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_light_mobile1.png?raw=true)  
+  
+Mobile light mode grid :  
+![Mobile light mode grid](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_light_mobile2.png?raw=true)  
+  
+Mobile dark mode list :  
+![Mobile dark mode list](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_dark_mobile1.png?raw=true)  
+  
+Mobile dark mode grid :  
+![Mobile dark mode grid](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/theme_filestash_plugin_dark_mobile2.png?raw=true)  
+  
+## Showcase archive_viewer plugin  
+**Computer browser**  
+  
+Computer light mode :  
+![Computer light mode](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/archive_viewer_filestash_plugin_light.png?raw=true)  
+  
+Computer dark mode :  
+![Computer dark mode](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/archive_viewer_filestash_plugin_dark.png?raw=true)  
+  
+**Mobile browser**  
+  
+Mobile light mode :  
+![Mobile light mode](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/archive_viewer_filestash_plugin_light_mobile.png?raw=true)  
+  
+Mobile dark mode :  
+![Mobile dark mode grid](https://github.com/Apoze/filestash_plugins/blob/main/Showcase/archive_viewer_filestash_plugin_dark_mobile.png?raw=true)  
