@@ -30,7 +30,7 @@ I used AI agents to help me doing it (vibecoding).
 Nearly all icons have been donwloaded from iconpacks.net (free of use)  
 Icon by <a href='https://www.iconpacks.net/?utm_source=link-attribution&utm_content=13308'>Iconpacks</a>  
 
-## Why did I made them ?
+## Why did I made them
 I wanted a different look for my filestash and I wanted to be able to browse my archive files.  
 I love wasting my time.  
 For the theme, I wasn't aiming for anything in particular, I changed many times and I'm sure you will recognise what it ended up looking like.  
