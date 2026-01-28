@@ -1,6 +1,6 @@
 ## Table of Contents
-- [Description](#filestash_plugins)
-- [AI Disclosure](#ai_disclosure)
+- [Description](#description)
+- [AI Disclosure](#ai-disclosure)
 - [Icons credits](#icons-credits)
 - [List of plugins](#list-of-plugins)
 - [Docker image compatibility](#docker-image-compatibility)
