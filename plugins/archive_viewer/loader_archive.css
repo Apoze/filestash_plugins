@@ -1,0 +1,501 @@
+.component_archive_viewer {
+  padding: 15px;
+  max-width: 100%;
+  min-width: 0;          /* critique si le viewer est dans un parent flex */
+  box-sizing: border-box;
+}
+
+.component_archive_viewer .archive_status {
+    margin: 10px 0;
+}
+
+.component_archive_viewer table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed !important;
+  max-width: none;
+  min-width: 100%;
+}
+
+/* Chemin: ne pousse jamais les autres colonnes */
+.component_archive_viewer .cell-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* NEW: ellipsis fiable (wrapper block dans le <td>) */
+.component_archive_viewer .cell-path .path-ellipsis{
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* Actions: on évite le wrap des boutons */
+.component_archive_viewer .cell-actions {
+  white-space: nowrap;
+}
+
+.component_archive_viewer th, .component_archive_viewer td {
+    text-align: left;
+    padding: 8px 6px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    vertical-align: middle;
+}
+
+.component_archive_viewer tr:hover td {
+    background: rgba(0,0,0,0.02);
+}
+
+.component_archive_viewer .muted {
+    opacity: 0.7;
+    font-size: 12px;
+}
+
+/* Image preview */
+.archive_modal_body img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(90vh - 120px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Empêche des enfants de forcer une largeur énorme */
+#modal-box.archive_viewer_modal .modal-message > *{
+  max-width: 100%;
+}
+
+/* ========= Archive viewer - modal sizing / centering / scroll ========= */
+/* Scope: n'affecte que le modal quand on ouvre un aperçu d'archive */
+#modal-box.archive_viewer_modal .component_popup {
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  width: min(1100px, 92vw) !important;
+  max-width: 92vw !important;
+  max-height: 90vh !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  background: #fff !important;
+  border-radius: 8px !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18) !important;
+  overflow: hidden !important;
+}
+
+/* Important en flex-column : permet au body de shrink => scroll OK */
+#modal-box.archive_viewer_modal .popup--content {
+  flex: 1 1 auto !important;
+  max-height: 90vh !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+/* Zone qui contient ton preview (d'après ton HTML) */
+#modal-box.archive_viewer_modal .modal-message {
+  flex: 1 1 auto !important;
+  max-height: calc(90vh - 90px) !important; /* marge pour header + boutons */
+  min-height: 0 !important;
+  overflow: auto !important;
+  box-sizing: border-box !important;
+  /* Empêche le scroll dans le modal de “déborder” vers le body (mobile surtout) */
+  overscroll-behavior: contain; /* stop scroll chaining */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Contenu injecté par le plugin */
+.archive_modal_body {
+  box-sizing: border-box;
+  padding: 10px;
+  max-width: 100%;
+}
+
+/* Bandeau "aperçu tronqué" */
+.archive_modal_notice {
+  position: sticky;
+  top: 0;
+  margin: -10px -10px 10px -10px;
+  padding: 8px 10px;
+  font-size: 12px;
+  background: rgba(0,0,0,0.05);
+}
+
+/* Texte : pas de débordement horizontal */
+.archive_modal_body pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.component_archive_viewer .archive_pager {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+
+  /* NEW: évite que Prev/Next disparaissent si ça déborde verticalement */
+  position: sticky;
+  bottom: 0; /* sticky threshold via bottom */
+  z-index: 2;
+  padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.06);
+}
+
+.component_archive_viewer .archive_pager button {
+  padding: 8px 10px;
+}
+
+/* Hover */
+.component_archive_viewer button:hover,
+.component_archive_viewer a.btn-download:hover {
+  filter: brightness(0.92);
+}
+
+/* NEW: highlight d'une ligne sélectionnée (utile quand la colonne checkbox est cachée) */
+.component_archive_viewer tbody tr.is-selected td{
+  background: rgba(15,108,189,0.10);
+}
+
+/* Boutons : base (button + lien "Télécharger l’archive") */
+.component_archive_viewer button,
+.component_archive_viewer a.btn-download{
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+
+  height: 32px;
+  line-height: 32px;
+  padding: 0 14px;
+  min-width: 100px;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none; /* important pour <a> */
+}
+
+/* Pager + bulk extract : bleu */
+body:not(.dark-mode) .component_archive_viewer .btn-primary{
+  background: linear-gradient(128.84deg, #39a0fa 20.46%, #5966fde6 72.3%);
+}
+
+/* Pager + bulk extract : bleu */
+.dark-mode .component_archive_viewer .btn-primary{
+  background: linear-gradient(128.84deg, #0f6cbd 20.46%, #3c45ab 72.3%);
+}
+
+/* Aperçu / Extraire (ligne) : gris */
+.component_archive_viewer .btn-action{
+  background: #50585e;
+  min-width: 110px;
+}
+
+.component_archive_viewer button:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.component_archive_viewer button:focus-visible{
+  outline: 2px solid rgba(60, 69, 171, 0.45);
+  outline-offset: 2px;
+}
+
+/* Largeurs fixes (colgroup) */
+.component_archive_viewer .col-select { 
+    width: 38px; 
+}
+
+.component_archive_viewer .col-size { 
+  /* "xxx.x XX" = 8 caractères
+     + padding horizontal du TD (6px + 6px) => 12px
+     => largeur pile pour contenir l’affichage max */
+  width: calc(8ch + 12px);
+}
+
+.component_archive_viewer .col-actions { 
+    width: 260px; 
+}
+
+/* Responsive widths: garde Taille/Actions stables, Chemin s'ellipsize */
+@media (max-width: 768px) {
+  .component_archive_viewer .col-size {
+    width: calc(8ch + 12px);
+  }
+  /* 2 icônes (2×36px) + gap (6px) + padding (6px + 6px) = 90px */
+  .component_archive_viewer .col-actions {
+    width: 90px;
+  }
+}
+
+.component_archive_viewer .cell-path.is-dir{
+    opacity: 0.7;
+}
+
+/* Taille : alignement propre */
+.component_archive_viewer .cell-size{
+    text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Checkbox */
+.component_archive_viewer .cell-select{
+    text-align: center;
+}
+
+.component_archive_viewer .cell-select input{
+    width: 16px;
+    height: 16px;
+}
+
+/* Barre bulk (au-dessus de la table) */
+.component_archive_viewer .archive_bulkbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+/* Bulkbar: groupe de boutons à gauche */
+.component_archive_viewer .archive_bulkbar .bulk-left{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.component_archive_viewer .actions-wrap{
+    /* IMPORTANT: ne pas forcer 100% => évite la boucle de mesure/élargissement */
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    min-height: 32px;
+}
+
+/* Pager: mêmes tailles + contenu centré */
+.component_archive_viewer .btn-pager{
+    width: 130px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Bouton Retour */
+.component_archive_viewer .btn-back{
+  background: linear-gradient(128.84deg, #ea1203 20.46%, #972121 72.3%);
+}
+
+/* Bouton Browse/Naviguer sur les folders */
+.component_archive_viewer .btn-browse{
+  background: #0c960d;
+}
+
+.component_archive_viewer tbody tr{
+    height: 48.67px;
+}
+
+/* Lignes filler: pas de hover / pas de contraste */
+.component_archive_viewer tbody tr.row-filler td {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: transparent !important;
+}
+
+/* Align headers via classes (robuste même si la colonne select disparaît) */
+.component_archive_viewer thead th.th-size {
+  text-align: center;
+}
+
+.component_archive_viewer td.cell-size {
+  text-align: right; /* cohérent avec la lecture de nombres */
+}
+
+.component_archive_viewer thead th.th-actions,
+.component_archive_viewer td.cell-actions {
+  text-align: center;
+}
+
+.component_archive_viewer .archive_topline{
+  display: grid;
+  grid-template-columns: 1fr auto; /* gauche = prend ce qui reste, droite = bouton */
+  align-items: center;
+  column-gap: 12px;
+  margin-top: 6px;
+
+  min-width: 0;
+  max-width: 100%;
+}
+
+.component_archive_viewer .archive_meta{
+  overflow: hidden;
+  white-space: nowrap;
+  min-width: 0;                 /* indispensable pour shrink */
+  text-overflow: ellipsis;      /* fallback si vraiment ça ne rentre pas */
+}
+
+/* en grid, on aligne explicitement le bouton */
+.component_archive_viewer .btn-download{
+  text-decoration: none;
+  white-space: nowrap;
+  justify-self: end;
+}
+
+/* Placeholder pour garder "Browse" à la place du bouton Aperçu */
+.component_archive_viewer .action-placeholder{
+  display: inline-block;
+  min-width: 110px; /* = min-width de .btn-action */
+  height: 32px;
+}
+
+/* Folder icon in select column */
+.component_archive_viewer .cell-select .folder-icon{
+  width: 32px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+/* Icône/label dans les boutons : desktop => texte, mobile => icône */
+.component_archive_viewer .btn-icon {
+  display: none;
+  width: 18px;
+  height: 18px;
+}
+
+/* (desktop) le texte reste visible */
+.component_archive_viewer .btn-label {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .component_archive_viewer .btn-label{
+    display: none;
+  }
+  .component_archive_viewer .btn-icon{
+    display: block;
+  }
+
+  /* Réduit la taille réelle des boutons/lien en mobile */
+  .component_archive_viewer button,
+  .component_archive_viewer a.btn-download{
+    min-width: 36px;
+    padding: 0 10px;
+  }
+
+   .component_archive_viewer .btn-action{
+    min-width: 36px;
+    width: 36px;   /* bouton carré => 2 boutons = largeur fixe */
+    padding: 0;    /* annule le padding 0 10px du style mobile générique */
+  }
+
+  .component_archive_viewer .actions-wrap{
+    gap: 6px;      /* plus compact que ton gap:10px desktop */
+  }
+    /* IMPORTANT: le placeholder doit aussi devenir "mobile" */
+  .component_archive_viewer .action-placeholder{
+    min-width: 36px;   /* au lieu de 110px en desktop */
+    height: 32px;      /* optionnel: cohérent avec les boutons */
+  }
+    /* Pager: évite l'overflow horizontal sur petits écrans */
+  .component_archive_viewer .archive_pager{
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .component_archive_viewer .btn-pager{
+    width: auto;        /* override du width:130px desktop */
+    min-width: 36px;    /* cohérent avec tes boutons mobile */
+    flex: 0 0 auto;
+  }
+
+  /* Pageinfo doit pouvoir se compresser (sinon pousse les boutons dehors) */
+  .component_archive_viewer [data-bind="pageinfo"]{
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* NEW: mobile tactile => on masque la colonne checkbox/icône folder SANS casser le layout du tableau */
+@media (max-width: 768px) and (pointer: coarse) {
+
+  /* 1) On garde la cellule dans le tableau (PAS de display:none),
+        sinon les colonnes se décalent (Chemin tombe dans col-select=0). */
+  .component_archive_viewer table tr > *:first-child{
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    overflow: hidden !important;
+    white-space: nowrap !important;
+
+    border-left: 0 !important;
+    border-right: 0 !important;
+    font-size: 0 !important;   /* évite qu’un caractère “force” une largeur */
+    line-height: 0 !important; /* optionnel */
+  }
+
+  /* 2) Masque le contenu (checkbox + icône folder) */
+  .component_archive_viewer table tr > *:first-child > *{
+    display: none !important;
+  }
+
+  /* 3) Colgroup: la colonne select doit vraiment être à 0 */
+  .component_archive_viewer .col-select{
+    width: 0 !important;
+  }
+
+  /* Confort: évite la sélection de texte au long-press */
+  .component_archive_viewer tbody{
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* par défaut ok */
+.component_archive_viewer .archive_tablewrap{
+  width: 100%;
+  min-width: 0;           /* crucial si le viewer est dans un layout flex */
+  box-sizing: border-box; /* stabilise les mesures (padding/border) */
+
+  overflow-x: auto;       /* (optionnel) permet de retirer le inline style dans le JS */
+  -webkit-overflow-scrolling: touch;
+
+  /* Empêche le "layout shift" quand la scrollbar apparaît/disparaît */
+  scrollbar-gutter: stable;
+}
+
+/* iOS Safari: évite le rendu en double / flicker dans un modal transformé */
+@supports (-webkit-touch-callout: none) {
+  .component_archive_viewer .archive_tablewrap{
+    -webkit-overflow-scrolling: auto;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}

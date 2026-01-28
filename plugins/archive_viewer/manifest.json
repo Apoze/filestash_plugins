@@ -1,0 +1,12 @@
+{
+    "author": "Inventory",
+    "version": "v0.0",
+    "modules": [
+        {
+            "type": "xdg-open",
+            "entrypoint": "/loader_archive.js",
+            "mime": "application/zip",
+            "application": "skeleton"
+        }
+    ]
+}
