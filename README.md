@@ -37,7 +37,7 @@ For the theme, I wasn't aiming for anything in particular, I changed many times 
 
 ## Customization
 You can change every icons of the plugins and put what you want.  
-You can go in theme.patch/archive_viewer.js and change the icons with this format "data:/".  
+You can go in theme.patch/theme.css & archive_viewer.js/archive_viewer.css and change the icons with this format "data:/...".
 The icons are all svg images.  
 
 ## List of plugins
