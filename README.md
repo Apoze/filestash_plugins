@@ -76,7 +76,7 @@ docker cp ./plugins/archive_viewer.zip filestash:/app/data/state/plugins/
 
 Check it worked (assuming your container name is "filestash"):
 ```bash
-docker exec -it filestash sh -lc 'ls -la /app/data/state/plugins/
+docker exec -it filestash sh -lc 'ls -la /app/data/state/plugins/'
 ```
 
 Restart your filestash container:
